@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%">
+  <defs>
+    <style>
+      .bg-transparent { fill: none; }
+      
+      /* Typography */
+      .brand-title { font-family: 'Segoe UI', 'SF Pro Display', -apple-system, sans-serif; font-weight: 900; font-size: 40px; fill: #CDD6F4; letter-spacing: -1px; }
+      .brand-subtitle { font-family: 'Segoe UI', -apple-system, sans-serif; font-weight: 600; font-size: 15px; fill: #89B4FA; letter-spacing: 3px; }
+      .tech-label { font-family: 'Fira Code', 'Courier New', monospace; font-weight: bold; font-size: 14px; }
+      
+      /* Base Trace Lines (Dark Background Tracks) */
+      .trace-bg { stroke: #313244; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      
+      /* Glowing Data Streams */
+      .stream-raw { stroke: #F38BA8; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 8 8; fill: none; }
+      .stream-reasoning { stroke: #CBA6F7; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .stream-answer { stroke: #A6E3A1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      
+      /* Core Node */
+      .node-core { fill: #1E1E2E; stroke: #89B4FA; stroke-width: 5; }
+      .node-inner { fill: #89B4FA; }
+    </style>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-core" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="880" height="200" class="bg-transparent" />
+
+  <g transform="translate(30, 0)">
+    
+    <path d="M 20 100 L 180 100" class="trace-bg" />
+    <path d="M 220 100 L 270 45 L 400 45" class="trace-bg" />
+    <path d="M 220 100 L 270 155 L 400 155" class="trace-bg" />
+
+    <path d="M 20 100 L 180 100" class="stream-raw" filter="url(#glow)" />
+    
+    <path d="M 220 100 L 270 45 L 400 45" class="stream-reasoning" filter="url(#glow)" />
+    
+    <path d="M 220 100 L 270 155 L 400 155" class="stream-answer" filter="url(#glow)" />
+
+    <rect x="176" y="76" width="48" height="48" rx="12" transform="rotate(45 200 100)" class="node-core" filter="url(#glow-core)" />
+    <circle cx="200" cy="100" r="8" class="node-inner" filter="url(#glow)" />
+
+    <text x="100" y="80" class="tech-label" fill="#F38BA8" text-anchor="middle">raw-llm-out</text>
+    
+    <text x="200" y="156" class="tech-label" fill="#89B4FA" text-anchor="middle">Normalizer</text>
+    
+    <text x="335" y="30" class="tech-label" fill="#CBA6F7" text-anchor="middle">reasoning</text>
+    
+    <text x="335" y="140" class="tech-label" fill="#A6E3A1" text-anchor="middle">answer</text>
+    
+  </g>
+
+  <g transform="translate(460, 105)">
+    <text x="0" y="0" class="brand-title">llm-io-normalizer</text>
+    <text x="5" y="32" class="brand-subtitle">THE MODEL I/O SHIELD</text>
+  </g>
+
+</svg>

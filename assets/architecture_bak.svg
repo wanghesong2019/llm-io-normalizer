@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="100%">
+  <defs>
+    <style>
+      .bg { fill: #1E1E2E; }
+      .text-title { font-family: 'Segoe UI', Helvetica, sans-serif; font-weight: 800; font-size: 22px; fill: #CDD6F4; }
+      .text-sub { font-family: 'Segoe UI', Helvetica, sans-serif; font-weight: 600; font-size: 14px; fill: #A6ADC8; }
+      .text-code { font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; fill: #BAC2DE; }
+      .box { fill: #313244; stroke: #45475A; stroke-width: 2; rx: 8; }
+      .box-highlight { fill: #181825; stroke: #89B4FA; stroke-width: 3; rx: 12; }
+      .arrow { stroke: #89B4FA; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-head { fill: #89B4FA; }
+      .tag-think { fill: #F38BA8; font-weight: bold; }
+      .tag-answer { fill: #A6E3A1; font-weight: bold; }
+      .tag-reasoning { fill: #CBA6F7; font-weight: bold; }
+    </style>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-head" />
+    </marker>
+  </defs>
+
+  <rect width="900" height="400" class="bg" rx="16"/>
+
+  <g transform="translate(40, 80)">
+    <rect width="260" height="240" class="box" />
+    <text x="20" y="35" class="text-title">Raw Provider I/O</text>
+    <text x="20" y="60" class="text-sub">Messy &amp; Fragmented</text>
+    
+    <rect x="20" y="80" width="220" height="135" fill="#1E1E2E" rx="6" />
+    <text x="35" y="105" class="text-code">msg.reasoning_content</text>
+    <text x="35" y="130" class="text-code tag-think">&lt;think&gt;</text>
+    <text x="45" y="155" class="text-code" fill="#6C7086">internal thoughts...</text>
+    <text x="35" y="180" class="text-code tag-think">&lt;/think&gt;</text>
+    <text x="35" y="200" class="text-code">Stream partial deltas</text>
+  </g>
+
+  <g transform="translate(360, 130)">
+    <rect width="180" height="140" class="box-highlight" filter="url(#glow)"/>
+    <text x="90" y="50" class="text-title" text-anchor="middle" fill="#89B4FA">Normalizer</text>
+    <text x="90" y="75" class="text-sub" text-anchor="middle">Engine</text>
+    
+    <line x1="30" y1="95" x2="150" y2="95" stroke="#45475A" stroke-width="2" stroke-dasharray="4 4" />
+    <text x="90" y="115" class="text-code" text-anchor="middle" font-size="12px">Auto Fallback &amp; Retry</text>
+  </g>
+
+  <g transform="translate(600, 60)">
+    <rect width="260" height="110" class="box" />
+    <text x="20" y="40" class="text-title tag-reasoning">reasoning_text</text>
+    <text x="20" y="65" class="text-sub">Clean extraction</text>
+    <text x="20" y="90" class="text-code" fill="#6C7086">"internal thoughts..."</text>
+  </g>
+
+  <g transform="translate(600, 230)">
+    <rect width="260" height="110" class="box" />
+    <text x="20" y="40" class="text-title tag-answer">answer_text</text>
+    <text x="20" y="65" class="text-sub">Final response only</text>
+    <text x="20" y="90" class="text-code">"The final answer is..."</text>
+  </g>
+
+  <path d="M 300 200 L 350 200" class="arrow" marker-end="url(#arrowHead)" />
+  
+  <path d="M 540 160 C 570 160, 570 115, 590 115" class="arrow" marker-end="url(#arrowHead)" stroke="#CBA6F7" />
+  
+  <path d="M 540 240 C 570 240, 570 285, 590 285" class="arrow" marker-end="url(#arrowHead)" stroke="#A6E3A1" />
+
+</svg>

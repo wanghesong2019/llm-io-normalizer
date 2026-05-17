@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%">
+  <defs>
+    <style>
+      .bg { fill: #1E1E2E; }
+      .text-bold { font-family: 'Comic Sans MS', 'Impact', sans-serif; font-weight: bold; }
+      .box { stroke: #FFF; stroke-width: 4; rx: 12; }
+      .arrow { fill: #F9E2AF; }
+      .comic-line { stroke: #F9E2AF; stroke-width: 3; stroke-dasharray: 6 6; }
+    </style>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#89B4FA" flood-opacity="1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" class="bg" rx="16"/>
+
+  <!-- Raw Input Box (Messy) -->
+  <rect x="40" y="80" width="260" height="140" fill="#313244" class="box" filter="url(#shadow)"/>
+  <text x="60" y="115" fill="#F38BA8" font-size="20" class="text-bold">&lt;think&gt;</text>
+  <text x="60" y="145" fill="#A6ADC8" font-size="16" font-family="monospace">messy internal thoughts...</text>
+  <text x="60" y="175" fill="#F38BA8" font-size="20" class="text-bold">&lt;/think&gt;</text>
+  <text x="60" y="200" fill="#A6E3A1" font-size="18" font-family="monospace">Final Answer!</text>
+
+  <!-- The Chopper / Normalizer -->
+  <path d="M 330 150 L 370 110 L 370 190 Z" class="arrow"/>
+  <text x="330" y="90" fill="#F9E2AF" font-size="22" class="text-bold">llm-io-normalizer</text>
+  
+  <line x1="390" y1="150" x2="430" y2="70" class="comic-line" />
+  <line x1="390" y1="150" x2="430" y2="230" class="comic-line" />
+
+  <!-- Output 1: Reasoning Box -->
+  <rect x="450" y="30" width="300" height="100" fill="#45475A" class="box" filter="url(#shadow)"/>
+  <text x="470" y="65" fill="#CBA6F7" font-size="24">🧠</text>
+  <text x="510" y="65" fill="#CBA6F7" font-size="20" class="text-bold">reasoning_text</text>
+  <text x="470" y="100" fill="#A6ADC8" font-size="16" font-family="monospace">"messy internal thoughts..."</text>
+
+  <!-- Output 2: Answer Box -->
+  <rect x="450" y="170" width="300" height="100" fill="#45475A" class="box" filter="url(#shadow)"/>
+  <text x="470" y="205" fill="#A6E3A1" font-size="24">💬</text>
+  <text x="510" y="205" fill="#A6E3A1" font-size="20" class="text-bold">answer_text</text>
+  <text x="470" y="240" fill="#A6E3A1" font-size="16" font-family="monospace">"Final Answer!"</text>
+</svg>
