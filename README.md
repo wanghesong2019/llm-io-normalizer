@@ -2,7 +2,8 @@
 
 <!-- markdownlint-disable MD033 -->
 <div align="center">
-  <img src="assets/logo.svg" alt="llm-io-normalizer Logo" width="800">
+  <!-- <img src="assets/logo.svg" alt="llm-io-normalizer Logo" width="800"> -->
+  <img src="https://raw.githubusercontent.com/wanghesong2019/llm-io-normalizer/main/assets/logo.svg" alt="llm-io-normalizer Logo" width="800">
 </div>
 <!-- markdownlint-enable MD033 -->
 
